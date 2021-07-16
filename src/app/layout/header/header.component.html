@@ -6,10 +6,15 @@
 
   <div class="navbar-collapse">
     <div class="navbar-nav ml-auto">
-      <div *ngIf="email" class="navbar-text float-left">
+      <div *ngIf="email" class="navbar-text float-left active">
         {{ email }}
       </div>
-      <a class="nav-item nav-link" [routerLink]="['/']">Home</a>
+      <!-- <a
+        class="nav-item nav-link"
+        routerLinkActive="active"
+        [routerLink]="['/']"
+        >Home</a
+      > -->
       <a
         *ngIf="!email"
         class="nav-item nav-link"
@@ -24,7 +29,10 @@
         [routerLink]="['/signup']"
         >Signup</a
       >
-      <a *ngIf="email" class="nav-item nav-link" (click)="handleSignOut()"
+      <a
+        *ngIf="email"
+        class="nav-item nav-link logout"
+        (click)="handleSignOut()"
         >Logout</a
       >
     </div>
